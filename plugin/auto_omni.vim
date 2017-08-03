@@ -19,7 +19,7 @@ func! Bind()
 endfunc
 
 " Completion of . and :
-inoremap <silent><expr> / "\<C-X>\<C-F>"
+inoremap <silent><expr> / "/\<C-X>\<C-F>"
 
 set completeopt=noinsert,menuone
 
