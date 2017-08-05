@@ -29,12 +29,12 @@ call auto_omni#_unlock()
 
 " Called once right before you start selecting multiple cursors
 func! Multiple_cursors_before()
-    call auto_omni#lock()
+    call auto_omni#_lock()
 endfunc
 
 " Called once only when the multiple selection is canceled (default <Esc>)
 func! Multiple_cursors_after()
-    call auto_omni#unlock()
+    call auto_omni#_unlock()
 endfunc
 
 
