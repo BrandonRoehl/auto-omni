@@ -10,9 +10,6 @@ if !exists("g:auto_omni_key")
                 \ 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'
 endif
 
-" set omnifunc=syntaxcomplete#Complete
-set completeopt=noinsert,menuone
-
 " Keys that trigger completeopt
 autocmd BufNewFile,BufRead * call AutoOmniBind()
 func! AutoOmniBind()
