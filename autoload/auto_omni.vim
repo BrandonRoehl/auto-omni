@@ -2,14 +2,14 @@ func! auto_omni#bind()
     for key in split(g:auto_omni_key)
         execute "inoremap <buffer><silent><expr> ".key." \"".key."\" . auto_omni#open()"
     endfor
-    inoremap <buffer><silent><expr> . ".\<C-X>\<C-O>"
-    inoremap <buffer><silent><expr> : ":\<C-X>\<C-O>"
+    " Completion of . and :
+    inoremap <buffer><silent><expr> / auto_omni#_locked() ? "/" : "/\<C-X>\<C-F>"
     " Tab insert
     inoremap <buffer><silent><expr> <Tab> pumvisible() ? "\<C-N>" : "\<Tab>"
 endfunc
 
 func! auto_omni#open()
-    if !pumvisible() && !auto_omni#_locked()
+    if !pumvisible() && !auto_omni#_locked() && !&paste
         return "\<C-X>\<C-O>"
     else
         return ''
@@ -36,5 +36,4 @@ endfunc
 func! Multiple_cursors_after()
     call auto_omni#_unlock()
 endfunc
-
 
