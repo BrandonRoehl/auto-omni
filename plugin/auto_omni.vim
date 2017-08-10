@@ -4,6 +4,8 @@ if exists("g:loaded_auto_omni")
   finish
 endif
 let g:loaded_auto_omni=1
+
+" Keys that trigger completeopt
 if !exists("g:auto_omni_key")
     let g:auto_omni_key =
                 \ 'a b c d e f g h i j k l m n o p q r s t u v w x y z ' .
@@ -11,7 +13,8 @@ if !exists("g:auto_omni_key")
                 \ '. : @'
 endif
 
-" Keys that trigger completeopt
+" On read or new make if we have omnifunc available
+" then load and initialize the plugin
 autocmd BufNewFile,BufRead * call AutoOmniBind()
 func! AutoOmniBind()
     if exists('&omnifunc') && &omnifunc != ""
