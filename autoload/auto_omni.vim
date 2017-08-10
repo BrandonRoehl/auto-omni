@@ -9,7 +9,7 @@ func! auto_omni#bind()
 endfunc
 
 func! auto_omni#open()
-    if !pumvisible() && !auto_omni#_locked() && !&paste
+    if !pumvisible() && !&paste && !auto_omni#_locked()
         return "\<C-X>\<C-O>"
     else
         return ''
