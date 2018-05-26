@@ -13,11 +13,11 @@ endif
 
 " Keys that trigger completeopt
 autocmd BufNewFile,BufRead * call AutoOmniBind()
-func! AutoOmniBind()
+function! AutoOmniBind()
     if exists('&omnifunc') && &omnifunc != ""
         call auto_omni#bind()
     endif
-endfunc
+endfunction
 command! -nargs=0 -bar AutoOmniLock
       \ call auto_omni#_lock()
 command! -nargs=0 -bar AutoOmniUnlock
